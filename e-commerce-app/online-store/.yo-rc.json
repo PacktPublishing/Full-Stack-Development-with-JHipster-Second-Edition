@@ -43,6 +43,8 @@
       "zh-cn",
       "ta"
     ],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "jhbook-online-store",
+    "herokuDeployType": "jar"
   }
 }
