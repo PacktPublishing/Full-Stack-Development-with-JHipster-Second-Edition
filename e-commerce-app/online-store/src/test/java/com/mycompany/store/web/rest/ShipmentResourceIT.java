@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link ShipmentResource} REST controller.
  */
 @SpringBootTest(classes = StoreApp.class)
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"}, password = "admin")
 public class ShipmentResourceIT {
 
     private static final String DEFAULT_TRACKING_CODE = "AAAAAAAAAA";
@@ -208,7 +210,7 @@ public class ShipmentResourceIT {
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].details").value(hasItem(DEFAULT_DETAILS)));
     }
-    
+
     @Test
     @Transactional
     public void getShipment() throws Exception {
