@@ -2,6 +2,7 @@ package com.mycompany.store.web.rest;
 
 import com.mycompany.store.StoreApp;
 import com.mycompany.store.domain.ProductOrder;
+import com.mycompany.store.domain.Customer;
 import com.mycompany.store.repository.ProductOrderRepository;
 import com.mycompany.store.service.ProductOrderService;
 import com.mycompany.store.web.rest.errors.ExceptionTranslator;
@@ -94,6 +95,16 @@ public class ProductOrderResourceIT {
             .placedDate(DEFAULT_PLACED_DATE)
             .status(DEFAULT_STATUS)
             .code(DEFAULT_CODE);
+        // Add required entity
+        Customer customer;
+        if (TestUtil.findAll(em, Customer.class).isEmpty()) {
+            customer = CustomerResourceIT.createEntity(em);
+            em.persist(customer);
+            em.flush();
+        } else {
+            customer = TestUtil.findAll(em, Customer.class).get(0);
+        }
+        productOrder.setCustomer(customer);
         return productOrder;
     }
     /**
@@ -107,6 +118,16 @@ public class ProductOrderResourceIT {
             .placedDate(UPDATED_PLACED_DATE)
             .status(UPDATED_STATUS)
             .code(UPDATED_CODE);
+        // Add required entity
+        Customer customer;
+        if (TestUtil.findAll(em, Customer.class).isEmpty()) {
+            customer = CustomerResourceIT.createUpdatedEntity(em);
+            em.persist(customer);
+            em.flush();
+        } else {
+            customer = TestUtil.findAll(em, Customer.class).get(0);
+        }
+        productOrder.setCustomer(customer);
         return productOrder;
     }
 

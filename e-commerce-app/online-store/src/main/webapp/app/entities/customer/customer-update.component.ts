@@ -31,7 +31,7 @@ export class CustomerUpdateComponent implements OnInit {
     addressLine2: [],
     city: [null, [Validators.required]],
     country: [null, [Validators.required]],
-    user: []
+    user: [null, Validators.required]
   });
 
   constructor(

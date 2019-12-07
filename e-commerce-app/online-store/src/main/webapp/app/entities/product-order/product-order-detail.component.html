@@ -20,7 +20,7 @@
                 <dt><span jhiTranslate="storeApp.productOrder.customer">Customer</span></dt>
                 <dd>
                     <div *ngIf="productOrder.customer">
-                        <a [routerLink]="['/customer', productOrder.customer?.id, 'view']">{{productOrder.customer?.id}}</a>
+                        <a [routerLink]="['/customer', productOrder.customer?.id, 'view']">{{productOrder.customer?.email}}</a>
                     </div>
                 </dd>
             </dl>

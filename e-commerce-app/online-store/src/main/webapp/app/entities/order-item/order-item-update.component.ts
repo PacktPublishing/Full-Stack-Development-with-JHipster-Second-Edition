@@ -29,8 +29,8 @@ export class OrderItemUpdateComponent implements OnInit {
     quantity: [null, [Validators.required, Validators.min(0)]],
     totalPrice: [null, [Validators.required, Validators.min(0)]],
     status: [null, [Validators.required]],
-    product: [],
-    order: []
+    product: [null, Validators.required],
+    order: [null, Validators.required]
   });
 
   constructor(

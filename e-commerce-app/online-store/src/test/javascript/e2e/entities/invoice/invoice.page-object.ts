@@ -26,6 +26,7 @@ export class InvoiceUpdatePage {
   pageTitle = element(by.id('jhi-invoice-heading'));
   saveButton = element(by.id('save-entity'));
   cancelButton = element(by.id('cancel-save'));
+  codeInput = element(by.id('field_code'));
   dateInput = element(by.id('field_date'));
   detailsInput = element(by.id('field_details'));
   statusSelect = element(by.id('field_status'));
@@ -36,6 +37,14 @@ export class InvoiceUpdatePage {
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
+  }
+
+  async setCodeInput(code) {
+    await this.codeInput.sendKeys(code);
+  }
+
+  async getCodeInput() {
+    return await this.codeInput.getAttribute('value');
   }
 
   async setDateInput(date) {

@@ -31,6 +31,10 @@ public class Invoice implements Serializable {
     private Long id;
 
     @NotNull
+    @Column(name = "code", nullable = false)
+    private String code;
+
+    @NotNull
     @Column(name = "date", nullable = false)
     private Instant date;
 
@@ -59,7 +63,8 @@ public class Invoice implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Shipment> shipments = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties("invoices")
     private ProductOrder order;
 
@@ -70,6 +75,19 @@ public class Invoice implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public Invoice code(String code) {
+        this.code = code;
+        return this;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Instant getDate() {
@@ -209,6 +227,7 @@ public class Invoice implements Serializable {
     public String toString() {
         return "Invoice{" +
             "id=" + getId() +
+            ", code='" + getCode() + "'" +
             ", date='" + getDate() + "'" +
             ", details='" + getDetails() + "'" +
             ", status='" + getStatus() + "'" +

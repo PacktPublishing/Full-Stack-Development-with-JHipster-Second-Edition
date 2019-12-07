@@ -19,19 +19,21 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="code"><span jhiTranslate="storeApp.invoice.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="date"><span jhiTranslate="storeApp.invoice.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="details"><span jhiTranslate="storeApp.invoice.details">Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="status"><span jhiTranslate="storeApp.invoice.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="paymentMethod"><span jhiTranslate="storeApp.invoice.paymentMethod">Payment Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="paymentDate"><span jhiTranslate="storeApp.invoice.paymentDate">Payment Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="paymentAmount"><span jhiTranslate="storeApp.invoice.paymentAmount">Payment Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th scope="col"  jhiSortBy="order.id"><span jhiTranslate="storeApp.invoice.order">Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="order.code"><span jhiTranslate="storeApp.invoice.order">Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let invoice of invoices ;trackBy: trackId">
                 <td><a [routerLink]="['/invoice', invoice.id, 'view' ]">{{invoice.id}}</a></td>
+                <td>{{invoice.code}}</td>
                 <td>{{invoice.date | date:'medium'}}</td>
                 <td>{{invoice.details}}</td>
                 <td jhiTranslate="{{'storeApp.InvoiceStatus.' + invoice.status}}">{{invoice.status}}</td>
@@ -40,7 +42,7 @@
                 <td>{{invoice.paymentAmount}}</td>
                 <td>
                     <div *ngIf="invoice.order">
-                        <a [routerLink]="['/product-order', invoice.order?.id, 'view' ]" >{{invoice.order?.id}}</a>
+                        <a [routerLink]="['/product-order', invoice.order?.id, 'view' ]" >{{invoice.order?.code}}</a>
                     </div>
                 </td>
                 <td class="text-right">

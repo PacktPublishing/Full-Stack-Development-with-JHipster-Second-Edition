@@ -28,7 +28,7 @@
             <th scope="col"  jhiSortBy="addressLine2"><span jhiTranslate="storeApp.customer.addressLine2">Address Line 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="city"><span jhiTranslate="storeApp.customer.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="country"><span jhiTranslate="storeApp.customer.country">Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th scope="col"  jhiSortBy="user.id"><span jhiTranslate="storeApp.customer.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="user.login"><span jhiTranslate="storeApp.customer.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -45,7 +45,7 @@
                 <td>{{customer.city}}</td>
                 <td>{{customer.country}}</td>
                 <td>
-                    {{customer.user?.id}}
+                    {{customer.user?.login}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group">

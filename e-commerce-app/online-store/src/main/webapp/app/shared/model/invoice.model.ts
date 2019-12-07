@@ -6,6 +6,7 @@ import { PaymentMethod } from 'app/shared/model/enumerations/payment-method.mode
 
 export interface IInvoice {
   id?: number;
+  code?: string;
   date?: Moment;
   details?: string;
   status?: InvoiceStatus;
@@ -19,6 +20,7 @@ export interface IInvoice {
 export class Invoice implements IInvoice {
   constructor(
     public id?: number,
+    public code?: string,
     public date?: Moment,
     public details?: string,
     public status?: InvoiceStatus,

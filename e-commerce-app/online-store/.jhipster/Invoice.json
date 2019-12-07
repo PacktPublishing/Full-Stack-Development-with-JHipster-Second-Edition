@@ -2,6 +2,13 @@
     "name": "Invoice",
     "fields": [
         {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
             "fieldName": "date",
             "fieldType": "Instant",
             "fieldValidateRules": [
@@ -54,8 +61,9 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "productOrder",
             "otherEntityRelationshipName": "invoice",
+            "relationshipValidateRules": "required",
             "relationshipName": "order",
-            "otherEntityField": "id"
+            "otherEntityField": "code"
         }
     ],
     "changelogDate": "20191207131124",
@@ -67,5 +75,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
 }

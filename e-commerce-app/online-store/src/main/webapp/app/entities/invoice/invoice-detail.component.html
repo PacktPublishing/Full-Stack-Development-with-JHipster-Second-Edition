@@ -5,6 +5,10 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="storeApp.invoice.code">Code</span></dt>
+                <dd>
+                    <span>{{invoice.code}}</span>
+                </dd>
                 <dt><span jhiTranslate="storeApp.invoice.date">Date</span></dt>
                 <dd>
                     <span>{{invoice.date}}</span>
@@ -32,7 +36,7 @@
                 <dt><span jhiTranslate="storeApp.invoice.order">Order</span></dt>
                 <dd>
                     <div *ngIf="invoice.order">
-                        <a [routerLink]="['/product-order', invoice.order?.id, 'view']">{{invoice.order?.id}}</a>
+                        <a [routerLink]="['/product-order', invoice.order?.id, 'view']">{{invoice.order?.code}}</a>
                     </div>
                 </dd>
             </dl>

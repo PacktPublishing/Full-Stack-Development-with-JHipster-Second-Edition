@@ -1,7 +1,11 @@
-import { browser, ExpectedConditions as ec, protractor, promise } from 'protractor';
+import { browser, ExpectedConditions as ec /* , protractor, promise */ } from 'protractor';
 import { NavBarPage, SignInPage } from '../../page-objects/jhi-page-objects';
 
-import { ProductOrderComponentsPage, ProductOrderDeleteDialog, ProductOrderUpdatePage } from './product-order.page-object';
+import {
+  ProductOrderComponentsPage,
+  /* ProductOrderDeleteDialog,
+   */ ProductOrderUpdatePage
+} from './product-order.page-object';
 
 const expect = chai.expect;
 
@@ -10,7 +14,7 @@ describe('ProductOrder e2e test', () => {
   let signInPage: SignInPage;
   let productOrderComponentsPage: ProductOrderComponentsPage;
   let productOrderUpdatePage: ProductOrderUpdatePage;
-  let productOrderDeleteDialog: ProductOrderDeleteDialog;
+  /* let productOrderDeleteDialog: ProductOrderDeleteDialog; */
 
   before(async () => {
     await browser.get('/');
@@ -34,37 +38,35 @@ describe('ProductOrder e2e test', () => {
     await productOrderUpdatePage.cancel();
   });
 
-  it('should create and save ProductOrders', async () => {
-    const nbButtonsBeforeCreate = await productOrderComponentsPage.countDeleteButtons();
+  /*  it('should create and save ProductOrders', async () => {
+        const nbButtonsBeforeCreate = await productOrderComponentsPage.countDeleteButtons();
 
-    await productOrderComponentsPage.clickOnCreateButton();
-    await promise.all([
-      productOrderUpdatePage.setPlacedDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
-      productOrderUpdatePage.statusSelectLastOption(),
-      productOrderUpdatePage.setCodeInput('code'),
-      productOrderUpdatePage.customerSelectLastOption()
-    ]);
-    expect(await productOrderUpdatePage.getPlacedDateInput()).to.contain(
-      '2001-01-01T02:30',
-      'Expected placedDate value to be equals to 2000-12-31'
-    );
-    expect(await productOrderUpdatePage.getCodeInput()).to.eq('code', 'Expected Code value to be equals to code');
-    await productOrderUpdatePage.save();
-    expect(await productOrderUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
+        await productOrderComponentsPage.clickOnCreateButton();
+        await promise.all([
+            productOrderUpdatePage.setPlacedDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
+            productOrderUpdatePage.statusSelectLastOption(),
+            productOrderUpdatePage.setCodeInput('code'),
+            productOrderUpdatePage.customerSelectLastOption(),
+        ]);
+        expect(await productOrderUpdatePage.getPlacedDateInput()).to.contain('2001-01-01T02:30', 'Expected placedDate value to be equals to 2000-12-31');
+        expect(await productOrderUpdatePage.getCodeInput()).to.eq('code', 'Expected Code value to be equals to code');
+        await productOrderUpdatePage.save();
+        expect(await productOrderUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 
-    expect(await productOrderComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
-  });
+        expect(await productOrderComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeCreate + 1, 'Expected one more entry in the table');
+    }); */
 
-  it('should delete last ProductOrder', async () => {
-    const nbButtonsBeforeDelete = await productOrderComponentsPage.countDeleteButtons();
-    await productOrderComponentsPage.clickOnLastDeleteButton();
+  /*  it('should delete last ProductOrder', async () => {
+        const nbButtonsBeforeDelete = await productOrderComponentsPage.countDeleteButtons();
+        await productOrderComponentsPage.clickOnLastDeleteButton();
 
-    productOrderDeleteDialog = new ProductOrderDeleteDialog();
-    expect(await productOrderDeleteDialog.getDialogTitle()).to.eq('storeApp.productOrder.delete.question');
-    await productOrderDeleteDialog.clickOnConfirmButton();
+        productOrderDeleteDialog = new ProductOrderDeleteDialog();
+        expect(await productOrderDeleteDialog.getDialogTitle())
+            .to.eq('storeApp.productOrder.delete.question');
+        await productOrderDeleteDialog.clickOnConfirmButton();
 
-    expect(await productOrderComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
-  });
+        expect(await productOrderComponentsPage.countDeleteButtons()).to.eq(nbButtonsBeforeDelete - 1);
+    }); */
 
   after(async () => {
     await navBarPage.autoSignOut();

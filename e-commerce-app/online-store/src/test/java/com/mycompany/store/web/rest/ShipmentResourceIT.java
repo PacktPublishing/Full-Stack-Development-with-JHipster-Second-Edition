@@ -2,6 +2,7 @@ package com.mycompany.store.web.rest;
 
 import com.mycompany.store.StoreApp;
 import com.mycompany.store.domain.Shipment;
+import com.mycompany.store.domain.Invoice;
 import com.mycompany.store.repository.ShipmentRepository;
 import com.mycompany.store.service.ShipmentService;
 import com.mycompany.store.web.rest.errors.ExceptionTranslator;
@@ -93,6 +94,16 @@ public class ShipmentResourceIT {
             .trackingCode(DEFAULT_TRACKING_CODE)
             .date(DEFAULT_DATE)
             .details(DEFAULT_DETAILS);
+        // Add required entity
+        Invoice invoice;
+        if (TestUtil.findAll(em, Invoice.class).isEmpty()) {
+            invoice = InvoiceResourceIT.createEntity(em);
+            em.persist(invoice);
+            em.flush();
+        } else {
+            invoice = TestUtil.findAll(em, Invoice.class).get(0);
+        }
+        shipment.setInvoice(invoice);
         return shipment;
     }
     /**
@@ -106,6 +117,16 @@ public class ShipmentResourceIT {
             .trackingCode(UPDATED_TRACKING_CODE)
             .date(UPDATED_DATE)
             .details(UPDATED_DETAILS);
+        // Add required entity
+        Invoice invoice;
+        if (TestUtil.findAll(em, Invoice.class).isEmpty()) {
+            invoice = InvoiceResourceIT.createUpdatedEntity(em);
+            em.persist(invoice);
+            em.flush();
+        } else {
+            invoice = TestUtil.findAll(em, Invoice.class).get(0);
+        }
+        shipment.setInvoice(invoice);
         return shipment;
     }
 

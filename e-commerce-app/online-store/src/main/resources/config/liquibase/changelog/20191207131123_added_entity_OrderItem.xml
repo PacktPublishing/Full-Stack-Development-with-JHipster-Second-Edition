@@ -26,10 +26,10 @@
                 <constraints nullable="false" />
             </column>
             <column name="product_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="order_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
@@ -57,6 +57,8 @@
             <column name="quantity" type="numeric"/>
             <column name="total_price" type="numeric"/>
             <column name="status" type="string"/>
+            <column name="product_id" type="numeric"/>
+            <column name="order_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>
