@@ -2,7 +2,7 @@ import { element, by, ElementFinder } from 'protractor';
 
 export class ProductComponentsPage {
   createButton = element(by.id('jh-create-entity'));
-  deleteButtons = element.all(by.css('jhi-product div table .btn-danger'));
+  deleteButtons = element.all(by.css('jhi-product div.list-group a .btn-danger'));
   title = element.all(by.css('jhi-product div h2#page-heading span')).first();
 
   async clickOnCreateButton() {
