@@ -82,7 +82,7 @@
                     <label class="form-control-label" jhiTranslate="storeApp.product.productCategory" for="field_productCategory">Product Category</label>
                     <select class="form-control" id="field_productCategory" name="productCategory" formControlName="productCategory">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="productCategoryOption.id === editForm.get('productCategory').value?.id ? editForm.get('productCategory').value : productCategoryOption" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.id}}</option>
+                        <option [ngValue]="productCategoryOption.id === editForm.get('productCategory').value?.id ? editForm.get('productCategory').value : productCategoryOption" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.name}}</option>
                     </select>
                 </div>
             </div>

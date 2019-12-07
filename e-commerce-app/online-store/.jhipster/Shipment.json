@@ -22,8 +22,9 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "invoice",
             "otherEntityRelationshipName": "shipment",
+            "relationshipValidateRules": "required",
             "relationshipName": "invoice",
-            "otherEntityField": "id"
+            "otherEntityField": "code"
         }
     ],
     "changelogDate": "20191207131125",

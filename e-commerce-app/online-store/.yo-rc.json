@@ -29,14 +29,19 @@
     "clientFramework": "angularX",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "testFrameworks": ["protractor"],
+    "testFrameworks": [
+      "protractor"
+    ],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": ["en", "zh-cn"],
+    "languages": [
+      "en",
+      "zh-cn"
+    ],
     "blueprints": []
   }
 }

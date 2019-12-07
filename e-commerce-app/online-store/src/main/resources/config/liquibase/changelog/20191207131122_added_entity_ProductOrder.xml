@@ -26,7 +26,7 @@
                 <constraints nullable="false" />
             </column>
             <column name="customer_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
@@ -55,6 +55,7 @@
             <column name="placed_date" type="datetime"/>
             <column name="status" type="string"/>
             <column name="code" type="string"/>
+            <column name="customer_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

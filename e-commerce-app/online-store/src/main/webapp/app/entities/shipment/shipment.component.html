@@ -22,7 +22,7 @@
             <th scope="col"  jhiSortBy="trackingCode"><span jhiTranslate="storeApp.shipment.trackingCode">Tracking Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="date"><span jhiTranslate="storeApp.shipment.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="details"><span jhiTranslate="storeApp.shipment.details">Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th scope="col"  jhiSortBy="invoice.id"><span jhiTranslate="storeApp.shipment.invoice">Invoice</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoice.code"><span jhiTranslate="storeApp.shipment.invoice">Invoice</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -34,7 +34,7 @@
                 <td>{{shipment.details}}</td>
                 <td>
                     <div *ngIf="shipment.invoice">
-                        <a [routerLink]="['/invoice', shipment.invoice?.id, 'view' ]" >{{shipment.invoice?.id}}</a>
+                        <a [routerLink]="['/invoice', shipment.invoice?.id, 'view' ]" >{{shipment.invoice?.code}}</a>
                     </div>
                 </td>
                 <td class="text-right">

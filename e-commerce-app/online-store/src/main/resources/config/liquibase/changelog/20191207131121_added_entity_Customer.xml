@@ -44,7 +44,7 @@
                 <constraints nullable="false" />
             </column>
             <column name="user_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_customer_user_id" />
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_customer_user_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
@@ -78,6 +78,7 @@
             <column name="address_line_2" type="string"/>
             <column name="city" type="string"/>
             <column name="country" type="string"/>
+            <column name="user_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

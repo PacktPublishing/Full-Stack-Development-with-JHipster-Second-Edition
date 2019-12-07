@@ -41,8 +41,9 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "customer",
             "otherEntityRelationshipName": "order",
+            "relationshipValidateRules": "required",
             "relationshipName": "customer",
-            "otherEntityField": "id"
+            "otherEntityField": "email"
         }
     ],
     "changelogDate": "20191207131122",

@@ -2,6 +2,7 @@ package com.mycompany.store.web.rest;
 
 import com.mycompany.store.StoreApp;
 import com.mycompany.store.domain.Customer;
+import com.mycompany.store.domain.User;
 import com.mycompany.store.repository.CustomerRepository;
 import com.mycompany.store.service.CustomerService;
 import com.mycompany.store.web.rest.errors.ExceptionTranslator;
@@ -116,6 +117,11 @@ public class CustomerResourceIT {
             .addressLine2(DEFAULT_ADDRESS_LINE_2)
             .city(DEFAULT_CITY)
             .country(DEFAULT_COUNTRY);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        customer.setUser(user);
         return customer;
     }
     /**
@@ -135,6 +141,11 @@ public class CustomerResourceIT {
             .addressLine2(UPDATED_ADDRESS_LINE_2)
             .city(UPDATED_CITY)
             .country(UPDATED_COUNTRY);
+        // Add required entity
+        User user = UserResourceIT.createEntity(em);
+        em.persist(user);
+        em.flush();
+        customer.setUser(user);
         return customer;
     }
 

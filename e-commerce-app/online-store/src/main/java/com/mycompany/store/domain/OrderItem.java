@@ -40,11 +40,13 @@ public class OrderItem implements Serializable {
     @Column(name = "status", nullable = false)
     private OrderItemStatus status;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties("orderItems")
     private Product product;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties("orderItems")
     private ProductOrder order;
 
