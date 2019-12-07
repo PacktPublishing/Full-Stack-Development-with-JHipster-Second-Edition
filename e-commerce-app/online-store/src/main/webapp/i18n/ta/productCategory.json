@@ -1,0 +1,24 @@
+{
+  "storeApp": {
+    "productCategory": {
+      "home": {
+        "title": "Product Categories",
+        "createLabel": "Product Category-ஐ உருவாக்கு",
+        "createOrEditLabel": "Product Category -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Product Categories found"
+      },
+      "created": "Product Category புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Product Category மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Product Category நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Product Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Category"
+      },
+      "name": "Name",
+      "description": "Description",
+      "product": "Product"
+    }
+  }
+}

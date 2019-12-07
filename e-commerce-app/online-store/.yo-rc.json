@@ -40,7 +40,8 @@
     "nativeLanguage": "en",
     "languages": [
       "en",
-      "zh-cn"
+      "zh-cn",
+      "ta"
     ],
     "blueprints": []
   }
