@@ -49,6 +49,7 @@
 
             <button type="button"
                     [routerLink]="['/invoice', invoice.id, 'edit']"
+                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
             </button>

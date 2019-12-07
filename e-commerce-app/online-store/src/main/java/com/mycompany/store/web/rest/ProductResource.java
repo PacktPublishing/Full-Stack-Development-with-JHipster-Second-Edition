@@ -16,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -53,6 +54,7 @@ public class ProductResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/products")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) throws URISyntaxException {
         log.debug("REST request to save Product : {}", product);
         if (product.getId() != null) {
@@ -74,6 +76,7 @@ public class ProductResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/products")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) throws URISyntaxException {
         log.debug("REST request to update Product : {}", product);
         if (product.getId() == null) {
@@ -121,6 +124,7 @@ public class ProductResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/products/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         log.debug("REST request to delete Product : {}", id);
         productService.delete(id);
