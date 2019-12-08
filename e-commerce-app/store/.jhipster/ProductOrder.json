@@ -32,12 +32,6 @@
             "relationshipName": "orderItem"
         },
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "invoice",
-            "otherEntityRelationshipName": "order",
-            "relationshipName": "invoice"
-        },
-        {
             "relationshipType": "many-to-one",
             "otherEntityName": "customer",
             "otherEntityRelationshipName": "order",
@@ -46,7 +40,7 @@
             "otherEntityField": "email"
         }
     ],
-    "changelogDate": "20191207131122",
+    "changelogDate": "20191208123903",
     "entityTableName": "product_order",
     "dto": "no",
     "pagination": "pagination",
@@ -55,5 +49,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store"
+    ]
 }

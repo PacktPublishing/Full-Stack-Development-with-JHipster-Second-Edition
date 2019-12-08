@@ -11,6 +11,10 @@
       "error": "பிழை"
     },
     "indicator": {
+      "discoveryComposite": "Discovery Composite",
+      "refreshScope": "Microservice Refresh Scope",
+      "configServer": "Microservice Config Server",
+      "hystrix": "Hystrix",
       "diskSpace": "வட்டு காலியிடம்",
       "mail": "மின்னஞ்சல்",
       "db": "Database"

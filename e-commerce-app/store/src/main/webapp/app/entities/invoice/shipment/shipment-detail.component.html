@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shipment">
+            <h2><span jhiTranslate="storeApp.invoiceShipment.detail.title">Shipment</span> {{shipment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="storeApp.invoiceShipment.trackingCode">Tracking Code</span></dt>
+                <dd>
+                    <span>{{shipment.trackingCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="storeApp.invoiceShipment.date">Date</span></dt>
+                <dd>
+                    <span>{{shipment.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="storeApp.invoiceShipment.details">Details</span></dt>
+                <dd>
+                    <span>{{shipment.details}}</span>
+                </dd>
+                <dt><span jhiTranslate="storeApp.invoiceShipment.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="shipment.invoice">
+                        <a [routerLink]="['/invoice', shipment.invoice?.id, 'view']">{{shipment.invoice?.code}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shipment', shipment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

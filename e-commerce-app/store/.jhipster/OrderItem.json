@@ -46,7 +46,7 @@
             "otherEntityField": "code"
         }
     ],
-    "changelogDate": "20191207131123",
+    "changelogDate": "20191208123904",
     "entityTableName": "order_item",
     "dto": "no",
     "pagination": "pagination",
@@ -55,5 +55,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store"
+    ]
 }

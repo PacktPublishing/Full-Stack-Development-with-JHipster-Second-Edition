@@ -8,7 +8,6 @@ buildscript {
         maven { url "https://repo.spring.io/plugins-release" }
     }
     dependencies {
-        classpath "gradle.plugin.com.heroku.sdk:heroku-gradle:1.0.4"
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
 }
@@ -42,7 +41,6 @@ assert System.properties["java.specification.version"] == "1.8" || "11" || "12" 
 
 apply from: "gradle/docker.gradle"
 apply from: "gradle/sonar.gradle"
-apply from: 'gradle/heroku.gradle'
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
 if (project.hasProperty("prod")) {
@@ -55,6 +53,9 @@ if (project.hasProperty("war")) {
     apply from: "gradle/war.gradle"
 }
 
+if (project.hasProperty("zipkin")) {
+    apply from: "gradle/zipkin.gradle"
+}
 
 idea {
     module {
@@ -215,6 +216,7 @@ dependencies {
     implementation "javax.cache:cache-api"
     implementation "org.hibernate:hibernate-core"
     implementation "com.zaxxer:HikariCP"
+    implementation "commons-codec:commons-codec"
     implementation "org.apache.commons:commons-lang3"
     implementation "commons-io:commons-io"
     implementation "javax.transaction:javax.transaction-api"
@@ -238,6 +240,16 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-websocket"
     implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
     implementation "org.zalando:problem-spring-web"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-zuul"
+    implementation "com.github.vladimir-bukhtoyarov:bucket4j-core"
+    implementation "com.github.vladimir-bukhtoyarov:bucket4j-jcache"
+    implementation "org.springframework.cloud:spring-cloud-starter"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-ribbon"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
+    implementation "org.springframework.retry:spring-retry"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+    implementation "org.springframework.cloud:spring-cloud-starter-config"
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
     implementation "org.springframework.boot:spring-boot-starter-cloud-connectors"
     implementation "org.springframework.security:spring-security-config"
     implementation "org.springframework.security:spring-security-data"
@@ -275,8 +287,6 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-library"
     testImplementation "com.h2database:h2"
     liquibaseRuntime "com.h2database:h2"
-    compile "org.springframework.cloud:spring-cloud-localconfig-connector"
-    compile "org.springframework.cloud:spring-cloud-heroku-connector"
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }
 

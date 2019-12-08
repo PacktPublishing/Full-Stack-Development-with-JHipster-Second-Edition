@@ -48,6 +48,13 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "productOrderId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "relationships": [
@@ -56,17 +63,9 @@
             "otherEntityName": "shipment",
             "otherEntityRelationshipName": "invoice",
             "relationshipName": "shipment"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "productOrder",
-            "otherEntityRelationshipName": "invoice",
-            "relationshipValidateRules": "required",
-            "relationshipName": "order",
-            "otherEntityField": "code"
         }
     ],
-    "changelogDate": "20191207131124",
+    "changelogDate": "20191208123905",
     "entityTableName": "invoice",
     "dto": "no",
     "pagination": "pagination",
@@ -75,7 +74,9 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*",
-    "searchEngine": false,
-    "databaseType": "sql"
+    "applications": [
+        "store",
+        "invoice"
+    ],
+    "microserviceName": "invoice"
 }

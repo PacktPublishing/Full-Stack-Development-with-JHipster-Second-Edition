@@ -12,8 +12,9 @@
         "customer": "Customer",
         "productOrder": "Product Order",
         "orderItem": "Order Item",
-        "invoice": "Invoice",
-        "shipment": "Shipment",
+        "invoiceInvoice": "Invoice",
+        "invoiceShipment": "Shipment",
+        "notificationNotification": "Notification",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -27,6 +28,7 @@
       },
       "admin": {
         "main": "管理",
+        "gateway": "网关",
         "userManagement": "用户管理",
         "tracker": "追踪使用者",
         "metrics": "资源监控",

@@ -27,7 +27,7 @@
             "otherEntityField": "code"
         }
     ],
-    "changelogDate": "20191207131125",
+    "changelogDate": "20191208123906",
     "entityTableName": "shipment",
     "dto": "no",
     "pagination": "pagination",
@@ -36,5 +36,9 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store",
+        "invoice"
+    ],
+    "microserviceName": "invoice"
 }

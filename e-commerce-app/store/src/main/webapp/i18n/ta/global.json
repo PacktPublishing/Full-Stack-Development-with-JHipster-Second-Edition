@@ -12,8 +12,9 @@
         "customer": "Customer",
         "productOrder": "Product Order",
         "orderItem": "Order Item",
-        "invoice": "Invoice",
-        "shipment": "Shipment",
+        "invoiceInvoice": "Invoice",
+        "invoiceShipment": "Shipment",
+        "notificationNotification": "Notification",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -27,6 +28,7 @@
       },
       "admin": {
         "main": "முக்கிய",
+        "gateway": "Gateway",
         "userManagement": "பயனர் நிர்வாகம்",
         "tracker": "பயனர் சுவடு",
         "metrics": "அளவீடுகள்",

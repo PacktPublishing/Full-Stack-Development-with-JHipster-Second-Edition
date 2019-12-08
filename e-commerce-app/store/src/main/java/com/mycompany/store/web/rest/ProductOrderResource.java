@@ -16,7 +16,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -54,7 +53,6 @@ public class ProductOrderResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/product-orders")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ProductOrder> createProductOrder(@Valid @RequestBody ProductOrder productOrder) throws URISyntaxException {
         log.debug("REST request to save ProductOrder : {}", productOrder);
         if (productOrder.getId() != null) {
@@ -76,7 +74,6 @@ public class ProductOrderResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/product-orders")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<ProductOrder> updateProductOrder(@Valid @RequestBody ProductOrder productOrder) throws URISyntaxException {
         log.debug("REST request to update ProductOrder : {}", productOrder);
         if (productOrder.getId() == null) {
@@ -124,7 +121,6 @@ public class ProductOrderResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/product-orders/{id}")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteProductOrder(@PathVariable Long id) {
         log.debug("REST request to delete ProductOrder : {}", id);
         productOrderService.delete(id);
