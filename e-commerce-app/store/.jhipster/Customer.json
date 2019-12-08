@@ -82,7 +82,7 @@
             "relationshipName": "order"
         }
     ],
-    "changelogDate": "20191207131121",
+    "changelogDate": "20191208123902",
     "entityTableName": "customer",
     "dto": "no",
     "pagination": "pagination",
@@ -91,5 +91,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store"
+    ]
 }

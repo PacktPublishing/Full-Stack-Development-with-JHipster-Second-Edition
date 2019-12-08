@@ -1,0 +1,31 @@
+{
+  "storeApp": {
+    "notificationNotification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "Notification-ஐ உருவாக்கு",
+        "createOrEditLabel": "Notification -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Notifications found"
+      },
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "date": "Date",
+      "details": "Details",
+      "sentDate": "Sent Date",
+      "format": "Format",
+      "userId": "User Id",
+      "productId": "Product Id"
+    }
+  },
+  "notificationApp": {
+    "notificationNotification": {
+      "created": "Notification புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Notification மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Notification நீக்கப்பட்டது, அடையாளம {{ param }}"
+    }
+  }
+}

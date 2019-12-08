@@ -44,10 +44,6 @@ public class ProductOrder implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<OrderItem> orderItems = new HashSet<>();
 
-    @OneToMany(mappedBy = "order")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Invoice> invoices = new HashSet<>();
-
     @ManyToOne(optional = false)
     @NotNull
     @JsonIgnoreProperties("orders")
@@ -124,31 +120,6 @@ public class ProductOrder implements Serializable {
 
     public void setOrderItems(Set<OrderItem> orderItems) {
         this.orderItems = orderItems;
-    }
-
-    public Set<Invoice> getInvoices() {
-        return invoices;
-    }
-
-    public ProductOrder invoices(Set<Invoice> invoices) {
-        this.invoices = invoices;
-        return this;
-    }
-
-    public ProductOrder addInvoice(Invoice invoice) {
-        this.invoices.add(invoice);
-        invoice.setOrder(this);
-        return this;
-    }
-
-    public ProductOrder removeInvoice(Invoice invoice) {
-        this.invoices.remove(invoice);
-        invoice.setOrder(null);
-        return this;
-    }
-
-    public void setInvoices(Set<Invoice> invoices) {
-        this.invoices = invoices;
     }
 
     public Customer getCustomer() {

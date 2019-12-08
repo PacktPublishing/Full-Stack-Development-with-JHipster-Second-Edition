@@ -20,7 +20,6 @@
       "status": "Status",
       "code": "Code",
       "orderItem": "Order Item",
-      "invoice": "Invoice",
       "customer": "Customer"
     }
   }

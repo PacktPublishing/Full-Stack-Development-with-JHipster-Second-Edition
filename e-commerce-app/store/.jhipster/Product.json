@@ -44,7 +44,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20191207131119",
+    "changelogDate": "20191208123900",
     "javadoc": "Product sold by the Online store",
     "entityTableName": "product",
     "dto": "no",
@@ -54,5 +54,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store"
+    ]
 }

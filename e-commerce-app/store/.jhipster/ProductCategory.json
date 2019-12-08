@@ -21,7 +21,7 @@
             "relationshipName": "product"
         }
     ],
-    "changelogDate": "20191207131120",
+    "changelogDate": "20191208123901",
     "entityTableName": "product_category",
     "dto": "no",
     "pagination": "no",
@@ -30,5 +30,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": [
+        "store"
+    ]
 }

@@ -26,11 +26,15 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'invoice',
-        loadChildren: () => import('./invoice/invoice.module').then(m => m.StoreInvoiceModule)
+        loadChildren: () => import('./invoice/invoice/invoice.module').then(m => m.InvoiceInvoiceModule)
       },
       {
         path: 'shipment',
-        loadChildren: () => import('./shipment/shipment.module').then(m => m.StoreShipmentModule)
+        loadChildren: () => import('./invoice/shipment/shipment.module').then(m => m.InvoiceShipmentModule)
+      },
+      {
+        path: 'notification',
+        loadChildren: () => import('./notification/notification/notification.module').then(m => m.NotificationNotificationModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
