@@ -36,4 +36,4 @@ spec:
             prefix: /
       route:
         - destination:
-            host: zipkin
+            host: jaeger-query
