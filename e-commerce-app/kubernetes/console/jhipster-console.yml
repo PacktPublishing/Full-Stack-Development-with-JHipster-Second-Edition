@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jhipster-console
+  namespace: jhipster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jhipster-console
+  template:
+    metadata:
+      labels:
+        app: jhipster-console
+    spec:
+      containers:
+        - image: jhipster/jhipster-console:v4.1.0
+          name: jhipster-console
+          ports:
+            - containerPort: 5601
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jhipster-console
+  namespace: jhipster
+  labels:
+    app: jhipster-console
+spec:
+  ports:
+    - name: http
+      port: 5601
+      targetPort: 5601
+  type: LoadBalancer
+  selector:
+    app: jhipster-console
+---
+

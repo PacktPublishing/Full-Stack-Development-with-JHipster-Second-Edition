@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jhipster-import-dashboards
+  namespace: jhipster
+  labels:
+    job: jhipster-import-dashboards
+spec:
+  template:
+    metadata:
+      labels:
+        job: jhipster-import-dashboards
+      annotations:
+        'helm.sh/hook': post-install
+    spec:
+      initContainers:
+        - name: init-dependent-service-check
+          image: busybox:latest
+          command:
+            - '/bin/sh'
+            - '-c'
+            - |
+              until nc -z -w 1 jhipster-elasticsearch 9200
+              do
+                echo Waiting for elasticsearch cluster to get initialized
+                sleep 5
+              done
+              until nc -z -w 1 jhipster-console 5601
+              do
+                echo Waiting for kibana to get initialized
+                sleep 5
+              done
+      containers:
+        - name: jhipster-import-dashboards
+          image: jhipster/jhipster-import-dashboards:v4.1.0
+          imagePullPolicy: IfNotPresent
+      restartPolicy: OnFailure
