@@ -1,0 +1,26 @@
+{
+  "storeApp": {
+    "orderItem": {
+      "home": {
+        "title": "Order Items",
+        "createLabel": "Order Item-ஐ உருவாக்கு",
+        "createOrEditLabel": "Order Item -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Order Items found"
+      },
+      "created": "Order Item புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Order Item மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Order Item நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Order Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Item"
+      },
+      "quantity": "Quantity",
+      "totalPrice": "Total Price",
+      "status": "Status",
+      "product": "Product",
+      "order": "Order"
+    }
+  }
+}
