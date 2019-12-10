@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: invoice-virtualservice
+  namespace: jhipster
+spec:
+  hosts:
+    - invoice
+  http:
+    - route:
+        - destination:
+            host: invoice
+            subset: 'v1'
+          weight: 100
+      retries:
+        attempts: 3
+        perTryTimeout: 2s

@@ -1,0 +1,56 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: store-gateway
+  namespace: jhipster
+  labels:
+    gateway: store-gateway
+    istio: ingressgateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - store.jhipster.34.77.78.2.nip.io
+    - port:
+        number: 80
+        name: http2
+        protocol: HTTP2
+      hosts:
+        - store.jhipster.34.77.78.2.nip.io
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: store-gw-virtualservice
+  namespace: jhipster
+  labels:
+    service: store-gw-virtualservice
+spec:
+  hosts:
+    - store.jhipster.34.77.78.2.nip.io
+  gateways:
+    - store-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /services/invoice/
+      route:
+        - destination:
+            host: invoice
+    - match:
+        - uri:
+            prefix: /services/notification/
+      route:
+        - destination:
+            host: notification
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: store
