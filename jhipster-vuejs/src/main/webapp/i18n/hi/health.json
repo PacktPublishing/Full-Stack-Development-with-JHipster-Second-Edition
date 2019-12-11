@@ -1,0 +1,28 @@
+{
+  "health": {
+    "title": "स्वास्थ्य जाँच",
+    "refresh.button": "ताज़ा करें",
+    "stacktrace": "Stacktrace",
+    "details": {
+      "details": "विवरण",
+      "properties": "गुण",
+      "name": "नाम",
+      "value": "मान",
+      "error": "त्रुटि"
+    },
+    "indicator": {
+      "diskSpace": "डिस्क स्थान",
+      "mail": "ईमेल",
+      "db": "Database"
+    },
+    "table": {
+      "service": "सेवा का नाम",
+      "status": "स्थिति"
+    },
+    "status": {
+      "UNKNOWN": "UNKNOWN",
+      "UP": "ऊपर",
+      "DOWN": "नीचे"
+    }
+  }
+}
