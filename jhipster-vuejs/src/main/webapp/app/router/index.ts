@@ -24,6 +24,12 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const Employee = () => import('../entities/employee/employee.vue');
+// prettier-ignore
+const EmployeeUpdate = () => import('../entities/employee/employee-update.vue');
+// prettier-ignore
+const EmployeeDetails = () => import('../entities/employee/employee-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -140,6 +146,31 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: ['ROLE_ADMIN'] }
+    }
+    ,
+    {
+      path: '/employee',
+      name: 'Employee',
+      component: Employee,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/employee/new',
+      name: 'EmployeeCreate',
+      component: EmployeeUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/employee/:employeeId/edit',
+      name: 'EmployeeEdit',
+      component: EmployeeUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/employee/:employeeId/view',
+      name: 'EmployeeView',
+      component: EmployeeDetails,
+      meta: { authorities: ['ROLE_USER'] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]

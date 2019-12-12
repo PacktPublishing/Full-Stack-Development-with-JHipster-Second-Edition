@@ -1,0 +1,25 @@
+{
+  "jhvueApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "नया Employee बनाएँ",
+        "createOrEditLabel": "Employee बनाएँ या संपादित करें",
+        "notFound": "No Employees found"
+      },
+      "created": "एक नया Employee [identifier: {{ param }}] तैयार है",
+      "updated": "एक Employee [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Employee [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Employee [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "name": "Name",
+      "age": "Age",
+      "dob": "Dob",
+      "user": "User"
+    }
+  }
+}
