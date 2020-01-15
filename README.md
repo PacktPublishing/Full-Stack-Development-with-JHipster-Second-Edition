@@ -6,5 +6,4 @@ This repository holds the code samples and images used in the book Full Stack De
 
 - **`e-commerce-app-monolith-final`** is a copy of the monolithic `e-commerce-app` at the end of chapter 7.
 
-- **`Code-by-chapter`** folder has zip files of the `e-commerce-app` folder after each chapter where there were code changes involved.
 - **`Images`** contains images used in the book.
