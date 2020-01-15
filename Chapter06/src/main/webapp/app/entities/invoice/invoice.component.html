@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="storeApp.invoice.home.title">Invoices</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-invoice" [routerLink]="['/invoice/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="storeApp.invoice.home.createLabel">
+            Create a new Invoice
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="invoices?.length === 0">
+        <span jhiTranslate="storeApp.invoice.home.notFound">No invoices found</span>
+    </div>
+    <div class="table-responsive" *ngIf="invoices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="code"><span jhiTranslate="storeApp.invoice.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="date"><span jhiTranslate="storeApp.invoice.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="details"><span jhiTranslate="storeApp.invoice.details">Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="status"><span jhiTranslate="storeApp.invoice.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentMethod"><span jhiTranslate="storeApp.invoice.paymentMethod">Payment Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentDate"><span jhiTranslate="storeApp.invoice.paymentDate">Payment Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAmount"><span jhiTranslate="storeApp.invoice.paymentAmount">Payment Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="order.code"><span jhiTranslate="storeApp.invoice.order">Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let invoice of invoices ;trackBy: trackId">
+                <td><a [routerLink]="['/invoice', invoice.id, 'view' ]">{{invoice.id}}</a></td>
+                <td>{{invoice.code}}</td>
+                <td>{{invoice.date | date:'medium'}}</td>
+                <td>{{invoice.details}}</td>
+                <td jhiTranslate="{{'storeApp.InvoiceStatus.' + invoice.status}}">{{invoice.status}}</td>
+                <td jhiTranslate="{{'storeApp.PaymentMethod.' + invoice.paymentMethod}}">{{invoice.paymentMethod}}</td>
+                <td>{{invoice.paymentDate | date:'medium'}}</td>
+                <td>{{invoice.paymentAmount}}</td>
+                <td>
+                    <div *ngIf="invoice.order">
+                        <a [routerLink]="['/product-order', invoice.order?.id, 'view' ]" >{{invoice.order?.code}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/invoice', invoice.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/invoice', invoice.id, 'edit']"
+                                *jhiHasAnyAuthority="'ROLE_ADMIN'"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(invoice)"
+                                class="btn btn-danger btn-sm"
+                                *jhiHasAnyAuthority="'ROLE_ADMIN'">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="invoices?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "storeApp": {
+    "shipment": {
+      "home": {
+        "title": "Shipments",
+        "createLabel": "Shipment-ஐ உருவாக்கு",
+        "createOrEditLabel": "Shipment -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Shipments found"
+      },
+      "created": "Shipment புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Shipment மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Shipment நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Shipment {{ id }}?"
+      },
+      "detail": {
+        "title": "Shipment"
+      },
+      "trackingCode": "Tracking Code",
+      "date": "Date",
+      "details": "Details",
+      "invoice": "Invoice"
+    }
+  }
+}

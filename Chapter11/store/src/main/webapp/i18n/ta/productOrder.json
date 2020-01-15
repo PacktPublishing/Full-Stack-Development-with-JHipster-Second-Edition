@@ -1,0 +1,26 @@
+{
+  "storeApp": {
+    "productOrder": {
+      "home": {
+        "title": "Product Orders",
+        "createLabel": "Product Order-ஐ உருவாக்கு",
+        "createOrEditLabel": "Product Order -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Product Orders found"
+      },
+      "created": "Product Order புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Product Order மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Product Order நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Product Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Order"
+      },
+      "placedDate": "Placed Date",
+      "status": "Status",
+      "code": "Code",
+      "orderItem": "Order Item",
+      "customer": "Customer"
+    }
+  }
+}

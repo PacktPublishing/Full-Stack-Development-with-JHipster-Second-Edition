@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "invoice",
+      "notification",
+      "store"
+    ],
+    "directoryPath": "../",
+    "clusteredDbApps": [],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MGJjNmU3NzRjYjhlNWEwNWU0NTU2OGY2OTM5ZWI1NDBmNWIxYWZkZWQxODc2ZmYzOThhMzE0NDJmZGMyODQ2YjkyZmVlOGI0YmNjMDQyYTk5ZmI0NmUwNGU2N2RjOGIyYjkzMA==",
+    "dockerRepositoryName": "deepu105",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "jhipster",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "monitoring": "elk",
+    "istio": false
+  }
+}

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-mysql
+  namespace: jhipster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store-mysql
+  template:
+    metadata:
+      labels:
+        app: store-mysql
+      annotations:
+        sidecar.istio.io/inject: 'false'
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: mysql
+          image: mysql:8.0.18
+          env:
+            - name: MYSQL_USER
+              value: root
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: 'yes'
+            - name: MYSQL_DATABASE
+              value: store
+          args:
+            - --lower_case_table_names=1
+            - --skip-ssl
+            - --character_set_server=utf8mb4
+            - --explicit_defaults_for_timestamp
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql/
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-mysql
+  namespace: jhipster
+spec:
+  selector:
+    app: store-mysql
+  ports:
+    - port: 3306

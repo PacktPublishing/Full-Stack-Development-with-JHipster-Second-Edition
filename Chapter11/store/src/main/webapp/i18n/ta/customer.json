@@ -1,0 +1,32 @@
+{
+  "storeApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Customer-ஐ உருவாக்கு",
+        "createOrEditLabel": "Customer -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Customers found"
+      },
+      "created": "Customer புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Customer மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Customer நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "gender": "Gender",
+      "email": "Email",
+      "phone": "Phone",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "city": "City",
+      "country": "Country",
+      "user": "User",
+      "order": "Order"
+    }
+  }
+}

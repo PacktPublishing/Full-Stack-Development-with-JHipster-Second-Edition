@@ -1,0 +1,30 @@
+{
+  "storeApp": {
+    "invoice": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Invoice-ஐ உருவாக்கு",
+        "createOrEditLabel": "Invoice -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Invoices found"
+      },
+      "created": "Invoice புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Invoice மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Invoice நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Invoice {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice"
+      },
+      "code": "Code",
+      "date": "Date",
+      "details": "Details",
+      "status": "Status",
+      "paymentMethod": "Payment Method",
+      "paymentDate": "Payment Date",
+      "paymentAmount": "Payment Amount",
+      "shipment": "Shipment",
+      "order": "Order"
+    }
+  }
+}

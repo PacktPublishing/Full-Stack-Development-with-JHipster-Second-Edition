@@ -1,0 +1,112 @@
+<div>
+  <h2 id="page-heading">
+    <span jhiTranslate="storeApp.product.home.title">Products</span>
+    <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/product/new']">
+      <fa-icon [icon]="'plus'"></fa-icon>
+      <span jhiTranslate="storeApp.product.home.createLabel">
+        Create a new Product
+      </span>
+    </button>
+  </h2>
+  <jhi-alert-error></jhi-alert-error>
+  <jhi-alert></jhi-alert>
+  <br />
+  <div class="alert alert-warning" *ngIf="products?.length === 0">
+    <span jhiTranslate="storeApp.product.home.notFound">No products found</span>
+  </div>
+  <div *ngIf="products">
+    <div class="mb-2 d-flex justify-content-end align-items-center">
+      <span class="mr-2 col-2">Filter by name</span>
+      <input type="search" class="form-control" [(ngModel)]="filter" />
+      <span class="mx-2 col-1">Sort by</span>
+      <div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+        <button type="button" class="btn btn-light" jhiSortBy="name">
+          <span class="d-flex">
+            <span jhiTranslate="storeApp.product.name">Name </span>&nbsp;
+            <fa-icon [icon]="'sort'"></fa-icon>
+          </span>
+        </button>
+        <button type="button" class="btn btn-light" jhiSortBy="price">
+          <span class="d-flex">
+            <span jhiTranslate="storeApp.product.price">Price</span>&nbsp;
+            <fa-icon [icon]="'sort'"></fa-icon>
+          </span>
+        </button>
+        <button type="button" class="btn btn-light" jhiSortBy="size">
+          <span class="d-flex">
+            <span jhiTranslate="storeApp.product.size">Size</span>&nbsp;
+            <fa-icon [icon]="'sort'"></fa-icon>
+          </span>
+        </button>
+        <button type="button" class="btn btn-light" jhiSortBy="productCategory.id">
+          <span class="d-flex">
+            <span jhiTranslate="storeApp.product.productCategory">Product Category</span>&nbsp;
+            <fa-icon [icon]="'sort'"></fa-icon>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="list-group">
+      <a
+        class="list-group-item list-group-item-action flex-column align-items-start"
+        *ngFor="let product of products | pureFilter: filter:'name'; trackBy: trackId"
+      >
+        <div class="row">
+          <div class="col-2 col-xs-12 justify-content-center">
+            <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-height:150px;" alt="product image" />
+          </div>
+          <div class="col col-xs-12">
+            <div class="d-flex w-100 justify-content-between">
+              <a [routerLink]="['/product', product.id, 'view']">
+                <h5 class="mb-1">
+                  {{ product.name }}
+                </h5>
+              </a>
+              <small *ngIf="product.productCategory">
+                <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">
+                  Category: {{ product.productCategory?.name }}
+                </a>
+              </small>
+            </div>
+            <small class="mb-1">{{ product.description }}</small>
+            <p class="mb-1">{{ product.price | currency: 'USD' }}</p>
+            <small>
+              Size:
+              <span jhiTranslate="{{ 'storeApp.Size.' + product.size }}">
+                {{ product.size }}
+              </span>
+            </small>
+            <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+              <button type="submit" [routerLink]="['/product', product.id, 'edit']"
+                *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn btn-primary btn-sm">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+              <button type="submit" (click)="delete(product)"
+                *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn btn-danger btn-sm">
+                <fa-icon [icon]="'times'"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div [hidden]="products?.length === 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+    </div>
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage(page)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
