@@ -71,10 +71,10 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 ## Get to Know the Author
 **Deepu K Sasidharan**
-Deepu K Sasidharan is the co-lead of JHipster. He has been part of the core JHipster team since its inception and is an active contributor to the project. He currently works for XebiaLabs, a DevOps software company, as a senior polyglot product developer. Prior to that, he worked at TCS as a technical consultant focusing on innovative solutions for airlines. He has over 10 years of experience in the architecture, design, and implementation of enterprise web applications, and pre-sales. He is also a Java, JavaScript, web technology, and DevOps expert. When not coding, he likes to read about astronomy and science.
+is the co-lead of JHipster. He has been part of the core JHipster team since its inception and is an active contributor to the project. He currently works for XebiaLabs, a DevOps software company, as a senior polyglot product developer. Prior to that, he worked at TCS as a technical consultant focusing on innovative solutions for airlines. He has over 10 years of experience in the architecture, design, and implementation of enterprise web applications, and pre-sales. He is also a Java, JavaScript, web technology, and DevOps expert. When not coding, he likes to read about astronomy and science.
 
 **Sendil Kumar N**
-Sendil Kumar N is part of the JHipster and Webpack team. He is an avid open source enthusiast and a contributor to many open source projects. He likes to explore and experiment with newer technologies and programming languages. He is passionate about (re)learning. He currently works at Uber as a senior software engineer, where he enhances the payment experience for Uber on the web. Before that, he designed, developed, and maintained enterprise products and DevOps tools that design and orchestrate releases for enterprises.
+is part of the JHipster and Webpack team. He is an avid open source enthusiast and a contributor to many open source projects. He likes to explore and experiment with newer technologies and programming languages. He is passionate about (re)learning. He currently works at Uber as a senior software engineer, where he enhances the payment experience for Uber on the web. Before that, he designed, developed, and maintained enterprise products and DevOps tools that design and orchestrate releases for enterprises.
 
 
 ### Suggestions and Feedback
