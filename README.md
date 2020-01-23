@@ -11,11 +11,11 @@ This repository holds the code samples and images used in the book Full Stack De
 
 # Full-Stack Development with JHipster - Second Edition 
 
-<a href="https://www.packtpub.com/web-development/full-stack-development-with-jhipster-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781838824983"><img src="" alt="Full-Stack Development with JHipster - Second Edition " height="256px" align="right"></a>
+<a href="https://www.packtpub.com/web-development/full-stack-development-with-jhipster-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781838824983"><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781838824983-original.jpeg" alt="Full-Stack Development with JHipster - Second Edition " height="256px" align="right"></a>
 
 This is the code repository for [Full-Stack Development with JHipster - Second Edition ](https://www.packtpub.com/web-development/full-stack-development-with-jhipster-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781838824983), published by Packt.
 
-**Build full stack applications and microservices with Spring Boot and modern JavaScript frameworks	**
+**Build full stack applications and microservices with Spring Boot and modern JavaScript frameworks**
 
 ## What is this book about?
 JHipster allows developers to easily create web applications and microservices from scratch without spending a lot of time on wiring and integrating different technologies. This second edition of Full Stack Development with JHipster will help you build full-stack application and microservices.
