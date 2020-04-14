@@ -19,7 +19,7 @@
       <span class="mr-2 col-2">Filter by name</span>
       <input type="search" class="form-control" [(ngModel)]="filter" />
       <span class="mx-2 col-1">Sort by</span>
-      <div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+      <div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
         <button type="button" class="btn btn-light" jhiSortBy="name">
           <span class="d-flex">
             <span jhiTranslate="storeApp.product.name">Name </span>&nbsp;
