@@ -50,7 +50,14 @@ With the following software and hardware list you can run all code files present
 ### Software and Hardware List
 | No | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
-| 1 | JHipster | Linux, macOS |
+| 1 | JHipster | Linux/Mac/Windows |
+| 2 | Node.js | Linux/Mac/Windows |
+| 3 | Git | Linux/Mac/Windows |
+| 4 | NPM | Linux/Mac/Windows |
+| 5 | Docker | Linux/Mac/Windows |
+| 6 | Google Cloud SDK | Linux/Mac/Windows |
+
+
 
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781838824983_ColorImages.pdf).
