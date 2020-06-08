@@ -48,18 +48,10 @@ This book is for full stack developers who want to build web applications and mi
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-).
 ### Software and Hardware List
-| Chapter | Software required | OS required |
+| No | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| 1 | JHipster | Linux, macOS |
+
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781838824983_ColorImages.pdf).
 
