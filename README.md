@@ -1,3 +1,8 @@
+## $5 Tech Unlocked 2021!
+[Buy and download this product for only $5 on PacktPub.com](https://www.packtpub.com/)
+-----
+*The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
+
 This repository holds the code samples and images used in the book Full Stack Development with JHipster Second Edition
 
 - **`e-commerce-app`** folder consists of the application created from chapter 1 until chapter 12, starting as a monolith and converted to a microservice during chapter 9. The git history of this repo mainly refers to this folder.
